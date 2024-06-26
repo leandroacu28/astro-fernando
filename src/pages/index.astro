@@ -1,5 +1,4 @@
 ---
-import Navbar from "../components/Navbar.astro";
 import MainLayouts from "../layouts/MainLayouts.astro";
 
 
@@ -11,7 +10,6 @@ const currentDate = new Date();
 ---
 	<MainLayouts title={title}>
 	
-	<Navbar />
 	<h1>{name}</h1>
 
 	<p>Momento actual: {currentDate.toLocaleTimeString()}</p>
@@ -21,6 +19,7 @@ const currentDate = new Date();
 		AÑO 2023
 	</footer>
   
+
 	<script>
 		//CLIENT ONLY
 		const footer=document.querySelector('footer') as HTMLElement;

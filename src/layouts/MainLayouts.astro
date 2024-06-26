@@ -1,4 +1,8 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+import Navbar from "../components/Navbar.astro";
+import "../styles/global.css";
+
 const {title}=Astro.props;  //Recibo propiedades title tanto de index como de about
 console.log(title)
 ---
@@ -8,8 +12,16 @@ console.log(title)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
+    <!-- Si quiero colocar el css en la carpeta public, debo quitar los import y referenciarlo con un link -->
+     
+    <!-- <link rel="stylesheet" href="../../public/styles/global.css"> -->
+
+    <ViewTransitions>   </ViewTransitions>
 </head>
 <body>
-    <slot></slot>
+    <Navbar></Navbar>
+    <main>
+        <slot></slot>
+    </main>
 </body>
 </html>
