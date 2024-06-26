@@ -1,4 +1,7 @@
 ---
+import Navbar from "../components/Navbar.astro";
+import MainLayouts from "../layouts/MainLayouts.astro";
+
 
 // Server Only
 const name = 'Leandro Martin Acuña';
@@ -6,14 +9,9 @@ const title = 'Home Page';
 
 const currentDate = new Date();
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{title}</title>
-</head>
-<body>
+	<MainLayouts title={title}>
+	
+	<Navbar />
 	<h1>{name}</h1>
 
 	<p>Momento actual: {currentDate.toLocaleTimeString()}</p>
@@ -32,6 +30,7 @@ const currentDate = new Date();
 		footer.innerText=`Año: ${currentYear}`;
 		currentTimeParagraph.innerText=`Momento Actual Real: ${new Date().toLocaleTimeString()}`	
 	</script>
-</body>
-</html>
+
+	</MainLayouts>
+
 
